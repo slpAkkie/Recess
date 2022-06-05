@@ -2,7 +2,7 @@
 
 @section('body')
     <div class="ftco-blocks-cover-1">
-        <div class="ftco-cover-1" style="background-image: url('images/hero_1.jpg');">
+        <div class="ftco-cover-1 video-header-00000">
             <div class="container">
                 <div class="row align-items-center justify-content-center">
                     <div class="col-lg-12 text-center">
@@ -13,6 +13,10 @@
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <div class="ftco-cover-1 video-header-item-00000 bnr-video-wrapper">
+                <video class="bnr-video" src="{{ asset('videos/portfolio-1.mp4') }}" preload="auto" no-controls autoplay loop playsinline muted></video>
             </div>
         </div>
     </div>

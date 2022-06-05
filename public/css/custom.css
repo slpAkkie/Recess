@@ -214,6 +214,24 @@
     background-color: #ff707e;
 }
 
+.video-header-00000 {
+    position: relative;
+}
+
+.video-header-item-00000 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background-color: #000;
+}
+
+.video-header-item-00000 > video {
+    opacity: .5;
+}
+
 /* Overrides */
 .btn,
 .form-control {
