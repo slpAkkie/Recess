@@ -11,6 +11,11 @@ class WorkObject extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'path',
+        'type_id',
+    ];
+
     public function work()
     {
         return $this->belongsTo(Work::class);

@@ -14,7 +14,7 @@
 
     <div class="row bg-white mt-5 px-lg-6 px-0 pt-lg-5 pt-0 @if($work->getPhotos()->count()) pb-1 @else pb-5 @endif">
         @if ($work->getVideo())
-            <video src="{{ asset("{$work->getVideo()->path}") }}" controls prelodad autoplay muted loop class="col-12 work-video-00000"></video>
+            <video src="{{ asset("{$work->getVideo()->path}") }}" controls prelodad autoplay muted loop class="col-12 work-video-00000 p-0"></video>
         @else
             <p class="col-12 text-center m-0">Видео отсутствует</p>
         @endif

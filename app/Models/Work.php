@@ -20,7 +20,7 @@ class Work extends Model
 
     public function getVideo()
     {
-        return $this->objects()->where('type_id', 1)->first();
+        return $this->objects()->where('type_id', 1)->orderBy('id', 'DESC')->first();
     }
 
     public function getPhotos()

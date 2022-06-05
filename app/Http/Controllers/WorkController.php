@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\WorkRequest;
 use App\Models\ShootingType;
 use App\Models\Work;
+use Illuminate\Support\Facades\File;
 
 class WorkController extends Controller
 {
@@ -65,6 +66,7 @@ class WorkController extends Controller
 
     public function destroy(Work $work)
     {
+        File::deleteDirectory(public_path('storage/works/' . $work->id));
         $work->delete();
 
         return response()->redirectToRoute('admin.works.index');

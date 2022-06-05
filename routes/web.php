@@ -7,6 +7,7 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WebController;
 use App\Http\Controllers\WorkController;
+use App\Http\Controllers\WorkObjectController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -62,6 +63,11 @@ Route::middleware('auth')->group(function () {
             Route::get('/{work}/edit', [WorkController::class, 'edit'])->name('.edit');
             Route::post('/{work}/edit', [WorkController::class, 'update'])->name('.update');
             Route::delete('/{work}/delete', [WorkController::class, 'destroy'])->name('.delete');
+
+            Route::prefix('/{work}/objects')->name('.objects')->group(function () {
+                Route::post('/', [WorkObjectController::class, 'uploadHandler'])->name('.upload');
+                Route::delete('/{work_object}', [WorkObjectController::class, 'destroy'])->name('.delete');
+            });
         });
         Route::get('/bookings', [AdminController::class, 'indexBookings'])->name('.bookings');
     });
