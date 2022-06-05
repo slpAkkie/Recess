@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ServiceRequest;
 use App\Models\Service;
 use App\Models\ShootingType;
-use Illuminate\Http\Request;
 
 class ServiceController extends Controller
 {
