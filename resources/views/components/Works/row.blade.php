@@ -3,7 +3,7 @@
     <h6 class="heading-center">{{ $work->country }}, {{ $work->city }}</h6>
 
     <div class="row bg-white mt-5 px-lg-6 px-0 pt-lg-5 pt-0 pb-1">
-        <video src="{{ asset("/videos/{$work->getVideo()->path}") }}" prelodad autoplay muted loop class="work-video-00000"></video>
+        <video src="{{ asset("/videos/{$work->getVideo()->path}") }}" controls prelodad autoplay muted loop class="work-video-00000"></video>
     </div>
     <div class="row bg-white p-6 justify-content-center gap-1">
         @foreach ($work->getPhotos() as $p)
