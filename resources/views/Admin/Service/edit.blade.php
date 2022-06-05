@@ -4,7 +4,7 @@
 <div class="site-section">
     <div class="container">
         <div class="row justify-content-center">
-            <form class="login-form col-12" action="{{ route('admin.services.update', $service->id) }}" method="post">
+            <form class="login-form col-12" action="{{ route('admin.services.update', $service) }}" method="post">
                 @csrf
                 <div class="form-group row">
                     <div class="col-md-12">

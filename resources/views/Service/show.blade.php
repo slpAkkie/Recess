@@ -10,7 +10,7 @@
                     <div class="row">
                         <div class="col mb-4 mb-md-0">
                             <img class="img-fluid" src="{{ asset($service->image_path) }}" alt="{{ $service->title }}">
-                            <a href="{{ route('book', $service->id) }}" class="btn btn-primary d-block py-2 px-3 mt-1 rounded-0">Забронировать</a>
+                            <a href="{{ route('book', $service) }}" class="btn btn-primary d-block py-2 px-3 mt-1 rounded-0">Забронировать</a>
                         </div>
                         <div class="col-12 col-md-8 d-flex flex-column align-items-start">
                             <div class="flex-grow-1">
@@ -23,8 +23,8 @@
                             @auth
                                 @if (Auth::user()->is_admin)
                                     <div class="d-flex mt-1">
-                                        <a href="{{ route('admin.services.edit', $service->id) }}" class="btn btn-light py-2 px-3 mr-2 rounded-0">Редактировать</a>
-                                        <form action="{{ route('admin.services.delete', $service->id) }}" method="post">
+                                        <a href="{{ route('admin.services.edit', $service) }}" class="btn btn-light py-2 px-3 mr-2 rounded-0">Редактировать</a>
+                                        <form action="{{ route('admin.services.delete', $service) }}" method="post">
                                             @csrf
                                             @method('delete')
                                             <button type="submit" class="btn btn-primary text-white py-2 px-3 rounded-0">Удалить</button>

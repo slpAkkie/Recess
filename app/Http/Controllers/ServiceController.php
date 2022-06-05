@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ServiceRequest;
 use App\Models\Service;
 use App\Models\ShootingType;
+use Illuminate\Http\Request;
 
 class ServiceController extends Controller
 {
@@ -34,7 +35,7 @@ class ServiceController extends Controller
         $service->save();
 
         return response()->redirectToRoute('services.show', [
-            'service' => $service->id,
+            'service' => $service,
         ]);
     }
 
@@ -56,7 +57,7 @@ class ServiceController extends Controller
         ]));
 
         return response()->redirectToRoute('services.show', [
-            'service' => $service->id,
+            'service' => $service,
         ]);
     }
 
@@ -65,12 +66,5 @@ class ServiceController extends Controller
         $service->delete();
 
         return response()->redirectToRoute('admin.services.index');
-    }
-
-    public function book(int $service_id)
-    {
-        return response()->redirectTo(route('contacts', [
-            'service_id' => $service_id,
-        ]) . "#price-calculator");
     }
 }

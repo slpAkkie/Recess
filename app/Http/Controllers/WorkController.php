@@ -36,7 +36,7 @@ class WorkController extends Controller
         $work->save();
 
         return response()->redirectToRoute('admin.works.show', [
-            'work' => $work->id,
+            'work' => $work,
         ]);
     }
 
@@ -60,7 +60,7 @@ class WorkController extends Controller
         ]));
 
         return response()->redirectToRoute('admin.works.show', [
-            'work' => $work->id,
+            'work' => $work,
         ]);
     }
 

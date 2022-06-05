@@ -3,7 +3,7 @@
         <span class="img-wrap mb-5">
             <img src="{{ asset($service->image_path) }}" alt="{{ $service->title }}" class="img-fluid">
         </span>
-        <h3 class="mb-2"><a href="{{ route('services.show', $service->id) }}">{{ $service->title }}</a></h3>
+        <h3 class="mb-2"><a href="{{ route('services.show', $service) }}">{{ $service->title }}</a></h3>
         <h6 class="mb-4 text-muted">{{ $service->type->title }}</h6>
         <p>{{ $service->description }}</p>
     </div>

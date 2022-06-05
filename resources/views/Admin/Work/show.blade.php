@@ -18,9 +18,9 @@
                     <div class="row">
                         <div class="col d-flex flex-column align-items-start">
                             <div class="d-flex mt-1">
-                                <a href="{{ route('admin.works.edit', $work->id) }}"
+                                <a href="{{ route('admin.works.edit', $work) }}"
                                     class="btn btn-light py-2 px-3 mr-2 rounded-0">Редактировать</a>
-                                <form action="{{ route('admin.works.delete', $work->id) }}" method="post">
+                                <form action="{{ route('admin.works.delete', $work) }}" method="post">
                                     @csrf
                                     @method('delete')
                                     <button type="submit"
@@ -33,7 +33,7 @@
                     <div class="row mt-5">
                         <div class="col-12"><h4 class="text-bold">Файлы</h4></div>
                         <div class="col-12 mb-4">
-                            <form action="{{ route('admin.works.objects.upload', $work->id) }}" id="upload-form" method="post" class="d-flex align-items-center gap-5">
+                            <form action="{{ route('admin.works.objects.upload', $work) }}" id="upload-form" method="post" class="d-flex align-items-center gap-5">
                                 @csrf
                                 <button id="upload-form__add-btn"
                                     class="btn btn-primary text-white py-2 px-3 rounded-0">Добавить</button>

@@ -6,7 +6,7 @@
         @auth
             @if(Auth::user()->is_admin)
                 <div class="col-12 d-flex mt-3 justify-content-center">
-                    <a href="{{ route('admin.works.show', $work->id) }}" class="btn btn-secondary py-2 px-3 rounded-0">Открыть</a>
+                    <a href="{{ route('admin.works.show', $work) }}" class="btn btn-secondary py-2 px-3 rounded-0">Открыть</a>
                 </div>
             @endif
         @endauth

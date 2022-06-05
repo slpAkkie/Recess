@@ -38,7 +38,7 @@ class StuffController extends Controller
         $stuff->save();
 
         return response()->redirectToRoute('stuff.show', [
-            'stuff' => $stuff->id,
+            'stuff' => $stuff,
         ]);
     }
 
@@ -58,7 +58,7 @@ class StuffController extends Controller
             $stuff->save();
 
         return response()->redirectToRoute('stuff.show', [
-            'stuff' => $stuff->id,
+            'stuff' => $stuff,
         ]);
     }
 
@@ -88,7 +88,7 @@ class StuffController extends Controller
         ])));
 
         return response()->redirectToRoute('stuff.show', [
-            'stuff' => $stuff->id,
+            'stuff' => $stuff,
         ]);
     }
 

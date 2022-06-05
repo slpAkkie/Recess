@@ -24,7 +24,7 @@
                                 <img class="img-fluid" src="{{ asset($stuff->avatar_path) }}" alt="{{ $stuff->full_name }}">
                                 @auth()
                                     @if (Auth::user()->is_admin)
-                                        <form action="{{ route('admin.stuff.delete-avatar', $stuff->id) }}" method="post">
+                                        <form action="{{ route('admin.stuff.delete-avatar', $stuff) }}" method="post">
                                             @csrf
                                             @method('delete')
                                             <button type="submit" class="btn btn-primary d-block py-2 px-3 mt-1 rounded-0 w-100">Удалить фото</button>
@@ -43,8 +43,8 @@
                             @auth
                                 @if (Auth::user()->is_admin)
                                     <div class="d-flex mt-1">
-                                        <a href="{{ route('admin.stuff.edit', $stuff->id) }}" class="btn btn-light py-2 px-3 mr-2 rounded-0">Редактировать</a>
-                                        <form action="{{ route('admin.stuff.delete', $stuff->id) }}" method="post">
+                                        <a href="{{ route('admin.stuff.edit', $stuff) }}" class="btn btn-light py-2 px-3 mr-2 rounded-0">Редактировать</a>
+                                        <form action="{{ route('admin.stuff.delete', $stuff) }}" method="post">
                                             @csrf
                                             @method('delete')
                                             <button type="submit" class="btn btn-primary text-white py-2 px-3 rounded-0">Удалить</button>
