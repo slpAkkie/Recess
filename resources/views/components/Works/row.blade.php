@@ -1,12 +1,12 @@
-<div class="col-12 work-00000">
+<div class="col-12 work-00000" data-aos="fade-up" data-aos-delay="">
     @if (!isset($withoutHeading))
         <h3 class="heading-center">{{ $work->type->title }} <span class="text-semi-bold">{{ $work->title }}</span></h3>
         <h6 class="heading-center">{{ $work->country }}, {{ $work->city }}</h6>
 
         @auth
             @if(Auth::user()->is_admin)
-                <div class="col-12 d-md-flex mt-3 justify-content-center">
-                    <a href="{{ route('admin.works.show', $work->id) }}" class="btn btn-primary text-white py-2 px-3 rounded-0">Открыть</a>
+                <div class="col-12 d-flex mt-3 justify-content-center">
+                    <a href="{{ route('admin.works.show', $work->id) }}" class="btn btn-secondary py-2 px-3 rounded-0">Открыть</a>
                 </div>
             @endif
         @endauth

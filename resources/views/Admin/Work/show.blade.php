@@ -95,8 +95,8 @@
 
             var r = new Resumable({
                 target: $('#upload-form').attr('action'),
-                chunkSize: 1 * 1024 * 1024,
-                simultaneousUploads: 3,
+                chunkSize: 5 * 1024 * 1024,
+                simultaneousUploads: 5,
                 testChunks: false,
                 throttleProgressCallbacks: 1,
                 query: {_token: $('#upload-form input[name=_token]').val()}
