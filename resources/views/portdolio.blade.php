@@ -26,7 +26,9 @@
                 </div>
             </div>
             <div class="row">
-                <x-Portfolio.work />
+                @foreach($works as $w)
+                    <x-Works.row :work="$w" />
+                @endforeach
             </div>
         </div>
     </div>

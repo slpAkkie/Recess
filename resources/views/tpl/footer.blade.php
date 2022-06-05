@@ -76,6 +76,7 @@
 <script src="{{ asset('js/jquery.fancybox.min.js') }}"></script>
 <script src="{{ asset('js/jquery.easing.1.3.js') }}"></script>
 <script src="{{ asset('js/aos.js') }}"></script>
+<script src="{{ asset('js/resumable.js') }}"></script>
 
 <script src="{{ asset('js/main.js') }}"></script>
 

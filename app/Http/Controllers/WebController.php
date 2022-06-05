@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Service;
+use App\Models\Work;
 use Illuminate\Support\Facades\Auth;
 
 class WebController extends Controller
@@ -16,7 +17,9 @@ class WebController extends Controller
 
     public function portfolio()
     {
-        return view('portdolio');
+        return view('portdolio', [
+            'works' => Work::all(),
+        ]);
     }
 
     public function about()

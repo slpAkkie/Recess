@@ -70,6 +70,38 @@
     padding-right: 4rem !important;
 }
 
+@media screen and (min-width: 992px) {
+    .p-lg-6 {
+        padding: 4rem !important;
+    }
+
+    .px-lg-6 {
+        padding-left: 4rem !important;
+        padding-right: 4rem !important;
+    }
+
+    .py-lg-6 {
+        padding-top: 4rem !important;
+        padding-bottom: 4rem !important;
+    }
+
+    .pt-lg-6 {
+        padding-top: 4rem !important;
+    }
+
+    .pb-lg-6 {
+        padding-bottom: 4rem !important;
+    }
+
+    .pl-lg-6 {
+        padding-left: 4rem !important;
+    }
+
+    .pr-lg-6 {
+        padding-right: 4rem !important;
+    }
+}
+
 .text-extra-thin {
     font-weight: 200;
 }
@@ -124,11 +156,17 @@
 }
 
 .work-img-00000 {
+    flex-grow: 1;
     object-fit: cover;
 }
 
 .work-00000+.work-00000 {
     margin-top: 10rem;
+}
+
+.work-video-00000 {
+    width: 100%;
+    height: auto;
 }
 
 .bnr-video-wrapper {

@@ -6,6 +6,7 @@ use App\Http\Controllers\BackController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WebController;
+use App\Http\Controllers\WorkController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -45,7 +46,7 @@ Route::middleware('auth')->group(function () {
 
     Route::middleware('admin-access')->prefix('/admin')->name('admin')->group(function () {
 
-        Route::prefix('services')->name('.services')->group(function () {
+        Route::prefix('/services')->name('.services')->group(function () {
             Route::get('/', [AdminController::class, 'indexServices'])->name('.index');
             Route::get('/create', [ServiceController::class, 'create'])->name('.create');
             Route::post('/', [ServiceController::class, 'store'])->name('.store');
@@ -53,7 +54,14 @@ Route::middleware('auth')->group(function () {
             Route::post('/{service}/edit', [ServiceController::class, 'update'])->name('.update');
             Route::delete('/{service}/delete', [ServiceController::class, 'destroy'])->name('.delete');
         });
-        Route::get('/works', [AdminController::class, 'indexWorks'])->name('.works');
+        Route::prefix('/works')->name('.works')->group(function () {
+            Route::get('/', [AdminController::class, 'indexWorks'])->name('.index');
+            Route::get('/create', [WorkController::class, 'create'])->name('.create');
+            Route::post('/', [WorkController::class, 'store'])->name('.store');
+            Route::get('/{work}/edit', [WorkController::class, 'edit'])->name('.edit');
+            Route::post('/{work}/edit', [WorkController::class, 'update'])->name('.update');
+            Route::delete('/{work}/delete', [WorkController::class, 'destroy'])->name('.delete');
+        });
         Route::get('/bookings', [AdminController::class, 'indexBookings'])->name('.bookings');
     });
 });
