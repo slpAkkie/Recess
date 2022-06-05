@@ -205,7 +205,13 @@
 
 .stuff-preview-bg {
     height: 400px;
-    background-color: #d4d7dd;
+    background-color: #ff707e;
+}
+
+.stuff-card-preview-bg {
+    width: 260px;
+    height: 260px;
+    background-color: #ff707e;
 }
 
 /* Overrides */
