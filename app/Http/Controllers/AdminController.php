@@ -6,6 +6,7 @@ use App\Models\Booking;
 use App\Models\Service;
 use App\Models\Stuff;
 use App\Models\Work;
+use Illuminate\Support\Carbon;
 
 class AdminController extends Controller
 {
@@ -24,7 +25,7 @@ class AdminController extends Controller
     public function indexBookings()
     {
         return view('Admin.Booking.index', [
-            'bookings' => Booking::where('status_id', '<', 3)->get(),
+            'bookings' => Booking::where('created_at', '>', Carbon::now()->addDays(-31)->format('YmdHis'))->get(),
         ]);
     }
 
