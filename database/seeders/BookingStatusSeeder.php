@@ -10,7 +10,8 @@ class BookingStatusSeeder extends Seeder
     private $rows = [
         [ 'title' => 'Не подтверждено' ],
         [ 'title' => 'Подтверждено' ],
-        [ 'title' => 'Звершено' ],
+        [ 'title' => 'Выполнено' ],
+        [ 'title' => 'Отменено администратором' ],
     ];
 
     public function run()

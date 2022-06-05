@@ -12,8 +12,10 @@
                     <div class="mb-2"><span class="text-bold">Email:</span> {{ $user->email }}</div>
                     <div><span class="text-bold">Номер телефона:</span> {{ $user->phone }}</div>
                     <div>
-                        <a href="{{ route('editProfile') }}"
-                            class="btn btn-primary text-white py-2 px-3 mt-3 rounded-0">Изменить данные</a>
+                        <a href="{{ route('profile.editProfile') }}"
+                            class="btn btn-secondary py-2 px-3 mt-3 rounded-0">Изменить данные</a>
+                        <a href="{{ route('profile.bookings') }}"
+                            class="btn btn-primary text-white py-2 px-3 mt-3 rounded-0">Мои бронирования</a>
                     </div>
                 </div>
             </div>

@@ -7,7 +7,7 @@
                 <h2 class="heading-39291 col-12">Изменить профиль</h2>
 
                 <div class="col-12 bg-white p-6">
-                    <form class="edit-profile-form col-12 mx-auto" action="{{ route('updateProfile') }}" method="post">
+                    <form class="edit-profile-form col-12 mx-auto" action="{{ route('profile.updateProfile') }}" method="post">
                         @csrf
                         <div class="form-group row">
                             <div class="col-md-12">

@@ -4,16 +4,16 @@
     <section class="site-section">
         <div class="container">
             <div class="row">
-                <h2 class="heading-39291 col-12">Все бронирования (не выполненные)</h2>
+                <h2 class="heading-39291 col-12">Ваши бронирования</h2>
 
                 <div class="col-12 bg-white p-6">
-                    @if($bookings->count())
+                    @isset($bookings)
                         @foreach ($bookings as $b)
-                            <x-User.booking :booking="$b" admin />
+                            <x-User.booking :booking="$b" />
                         @endforeach
                     @else
-                        <h6 class="m-0">Нет бронирований</h6>
-                    @endif
+                        <h6 class="m-0">У вас еще нет бронирований</h6>
+                    @endisset
                 </div>
             </div>
         </div>

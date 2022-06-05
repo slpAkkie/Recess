@@ -32,7 +32,9 @@ class WebController extends Controller
 
     public function contacts()
     {
-        return view('contacts');
+        return view('contacts', [
+            'services' => Service::all(),
+        ]);
     }
 
     public function profile()
@@ -40,5 +42,10 @@ class WebController extends Controller
         return view('User.profile', [
             'user' => Auth::user(),
         ]);
+    }
+
+    public function booking()
+    {
+        return response()->redirectTo(route('contacts') . "#price-calc-section");
     }
 }

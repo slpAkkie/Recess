@@ -18,6 +18,53 @@
     </div>
 
 
+    <section class="site-section" id="price-calc-section">
+        <div class="container">
+            <div class="row p-6 bg-white">
+                @guest
+                    <h3 class="col-12 m-0">Для подсчета суммы бронирования <a href="{{ route('showLogin') }}">войдите</a> в аккаунт (или <a href="{{ route('showRegister') }}">зарегистрируйтесь</a>)</h3>
+                @else
+                    <h5 class="col-12 heading-39291 mb-1">Калькулятор бронирования</h5>
+                    <h6 class="col-12 mb-5 text-muted">Для бронирования, заполните все поля</h6>
+                    <form class="col-12" action="{{ route('booking') }}" method="post" id="calculator-form">
+                        @csrf
+                        <div class="form-group row">
+                            <div class="col-12 col-md-6 mb-3 mb-md-0">
+                                <label for="service_id">Услуга</label>
+                                <select name="service_id" id="service_id" class="form-control border @error('service_id') is-invalid @enderror">
+                                    @foreach ($services as $s)
+                                        <option value="{{ $s->id }}">{{ $s->title }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label for="date">Выберите дату</label>
+                                <input type="date" name="date" id="date"
+                                    class="form-control border @error('date') is-invalid @enderror" placeholder="Пароль">
+                                <div class="invalid-feedback text-bold" id="date-invalid-feedback">
+                                    @error('date')
+                                        {{ $message }}
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group row d-none" id="total-wrapper">
+                            <div class="col-12 col-md-6">
+                                <label for="total" id="total-label">Всего:</label>
+                                <input type="text" id="total" name="total" class="form-control" hidden>
+                            </div>
+                            <div class="col-12 col-md-6 text-primary" id="weekend-info"></div>
+                        </div>
+
+                        <button type="submit" id="book-btn" class="btn btn-primary text-white py-3 px-5 rounded-0 d-none">Забронировать</button>
+                    </form>
+                @endguest
+            </div>
+        </div>
+    </section>
+
+
     <div class="site-section">
         <div class="container">
 
@@ -117,5 +164,72 @@
 
             $('#feedback-form').submit();
         });
+
+
+
+
+
+        const services = {
+            @foreach ($services as $s)
+                {{ $s->id }}: { 'title': '{{ $s->title }}', 'price_per_hour': {{ $s->price_per_hour }} },
+            @endforeach
+        };
+
+        const serviceInput = $('#service_id');
+        const dateInput = $('#date');
+        const totalInput = $('#total');
+        const totalWrapper = $('#total-wrapper');
+        const bookBtn = $('#book-btn');
+        const weekendInfo = $('#weekend-info');
+        const totalLabel = $('#total-label');
+        const dateInvalidFeedback = $('#date-invalid-feedback');
+
+        let date = null, service_id = serviceInput.val(), total = 0, isWeekend = false;
+
+        function setDateError(message) {
+            dateInvalidFeedback.text(message);
+            dateInput.addClass('is-invalid')
+        }
+
+        function clearDateError() {
+            dateInvalidFeedback.text('');
+            dateInput.removeClass('is-invalid')
+        }
+
+        function isFormInputErrors() {
+            return !date || isNaN(date) || !service_id || date <= new Date();
+        }
+
+        function updateCalc() {
+            weekendInfo.text(isWeekend ? 'В пятницу и субботу, стоимость услуг на 10% дороже' : '');
+            if (isFormInputErrors()) {
+                if (isNaN(date)) setDateError('Введите корректную дату');
+                else if (date <= new Date()) setDateError('На эту дату нельзя заказать бронирование');
+                else clearDateError();
+
+                totalWrapper.addClass('d-none');
+                bookBtn.addClass('d-none');
+                total = 0
+            } else {
+                clearDateError();
+                totalWrapper.removeClass('d-none');
+                bookBtn.removeClass('d-none');
+                total = Math.floor(services[service_id].price_per_hour * (isWeekend ? 1.1 : 1));
+                totalLabel.text(`Всего: ${total} рублей`)
+            }
+
+            totalInput.val(total);
+        }
+
+        serviceInput.on('input', function () {
+            service_id = serviceInput.val();
+            updateCalc();
+        })
+
+        dateInput.on('change', function () {
+            date = new Date(dateInput.val());
+            isWeekend = date ? [5, 6].includes(date.getDay()) : false;
+            updateCalc();
+        })
     </script>
 @endsection

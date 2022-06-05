@@ -49,4 +49,11 @@ class UserController extends Controller
 
         return response()->redirectToRoute('profile');
     }
+
+    public function bookings()
+    {
+        return view('User.bookings', [
+            'bookings' => Auth::user()->bookings,
+        ]);
+    }
 }

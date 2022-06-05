@@ -74,7 +74,7 @@
                                             href="{{ route('showLogin') }}" class="nav-link">Войти</a></li>
                                 @else
                                     <li @if (Route::currentRouteName() === 'profile') class="active" @endif><a
-                                            href="{{ route('profile') }}" class="nav-link"><span
+                                            href="{{ route('profile.index') }}" class="nav-link"><span
                                                 class="icon-user px-3 d-none d-lg-inline"></span> <span
                                                 class="d-inline d-lg-none">Профиль</span></a></li>
                                     <li><a href="{{ route('logout') }}" class="nav-link">Выйти</a></li>

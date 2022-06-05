@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BackController;
+use App\Http\Controllers\BookingController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\StuffController;
 use App\Http\Controllers\UserController;
@@ -31,6 +32,8 @@ Route::prefix('services')->name('services')->group(function () {
     Route::get('/{service}', [ServiceController::class, 'show'])->name('.show');
 });
 
+Route::get('/booking', [WebController::class, 'booking'])->name('bookingCalculator');
+
 Route::get('stuff/{stuff}', [StuffController::class, 'show'])->name('stuff.show');
 
 Route::get('/login', [AuthController::class, 'showLogin'])->name('showLogin');
@@ -40,13 +43,15 @@ Route::post('/register', [AuthController::class, 'register'])->name('register');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::middleware('auth')->group(function () {
-    Route::prefix('/profile')->group(function () {
-        Route::get('/', [WebController::class, 'profile'])->name('profile');
-        Route::get('/edit', [UserController::class, 'editProfile'])->name('editProfile');
-        Route::post('/edit', [UserController::class, 'updateProfile'])->name('updateProfile');
+    Route::prefix('/profile')->name('profile')->group(function () {
+        Route::get('/', [WebController::class, 'profile'])->name('.index');
+        Route::get('/edit', [UserController::class, 'editProfile'])->name('.editProfile');
+        Route::post('/edit', [UserController::class, 'updateProfile'])->name('.updateProfile');
+        Route::get('/bookings', [UserController::class, 'bookings'])->name('.bookings');
+        Route::delete('/bookings/{booking}', [BookingController::class, 'cancel'])->name('.cancelBooking');
     });
 
-    Route::get('book/{service_id}', [ServiceController::class, 'book'])->name('book');
+    Route::post('/booking', [BookingController::class, 'store'])->name('booking');
 
     Route::middleware('admin-access')->prefix('/admin')->name('admin')->group(function () {
 
@@ -83,7 +88,14 @@ Route::middleware('auth')->group(function () {
             Route::delete('/{stuff}/avatar', [StuffController::class, 'destroyAvatar'])->name('.delete-avatar');
         });
 
-        Route::get('/bookings', [AdminController::class, 'indexBookings'])->name('.bookings');
+        Route::prefix('/bookings')->name('.bookings')->group(function () {
+            Route::get('/', [AdminController::class, 'indexBookings'])->name('.index');
+            Route::get('/{booking}/edit', [BookingController::class, 'edit'])->name('.edit');
+            Route::post('/{booking}/resolve', [BookingController::class, 'resolve'])->name('.resolve');
+            Route::post('/{booking}/reject', [BookingController::class, 'reject'])->name('.reject');
+            Route::post('/{booking}/close', [BookingController::class, 'close'])->name('.close');
+            Route::post('/{booking}', [BookingController::class, 'update'])->name('.update');
+        });
     });
 });
 

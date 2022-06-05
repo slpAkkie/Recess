@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Booking;
 use App\Models\Service;
 use App\Models\Stuff;
 use App\Models\Work;
@@ -22,7 +23,9 @@ class AdminController extends Controller
 
     public function indexBookings()
     {
-        return view('Admin.Booking.index');
+        return view('Admin.Booking.index', [
+            'bookings' => Booking::where('status_id', '<', 3)->get(),
+        ]);
     }
 
     public function indexStuff() {

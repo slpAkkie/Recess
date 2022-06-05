@@ -13,7 +13,7 @@
                         class="btn btn-primary text-white py-2 px-3 mt-3 rounded-0">Портфолио</a>
                 </div>
                 <div>
-                    <a href="{{ route('admin.bookings') }}"
+                    <a href="{{ route('admin.bookings.index') }}"
                         class="btn btn-primary text-white py-2 px-3 mt-3 rounded-0">Бронирования</a>
                 </div>
                 <div>
