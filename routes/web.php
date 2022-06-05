@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BackController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\StuffController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WebController;
 use App\Http\Controllers\WorkController;
@@ -29,6 +30,8 @@ Route::get('/contacts', [WebController::class, 'contacts'])->name('contacts');
 Route::prefix('services')->name('services')->group(function () {
     Route::get('/{service}', [ServiceController::class, 'show'])->name('.show');
 });
+
+Route::get('stuff/{stuff}', [StuffController::class, 'show'])->name('stuff.show');
 
 Route::get('/login', [AuthController::class, 'showLogin'])->name('showLogin');
 Route::post('/login', [AuthController::class, 'login'])->name('login');
@@ -69,6 +72,17 @@ Route::middleware('auth')->group(function () {
                 Route::delete('/{work_object}', [WorkObjectController::class, 'destroy'])->name('.delete');
             });
         });
+
+        Route::prefix('/stuff')->name('.stuff')->group(function () {
+            Route::get('/', [AdminController::class, 'indexStuff'])->name('.index');
+            Route::get('/create', [StuffController::class, 'create'])->name('.create');
+            Route::post('/', [StuffController::class, 'store'])->name('.store');
+            Route::get('/{stuff}/edit', [StuffController::class, 'edit'])->name('.edit');
+            Route::post('/{stuff}', [StuffController::class, 'update'])->name('.update');
+            Route::delete('/{stuff}', [StuffController::class, 'destroy'])->name('.delete');
+            Route::delete('/{stuff}/avatar', [StuffController::class, 'destroyAvatar'])->name('.delete-avatar');
+        });
+
         Route::get('/bookings', [AdminController::class, 'indexBookings'])->name('.bookings');
     });
 });

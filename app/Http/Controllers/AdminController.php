@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Service;
+use App\Models\Stuff;
 use App\Models\Work;
 
 class AdminController extends Controller
@@ -22,5 +23,11 @@ class AdminController extends Controller
     public function indexBookings()
     {
         return view('Admin.Booking.index');
+    }
+
+    public function indexStuff() {
+        return view('Admin.Stuff.index', [
+            'stuff' => Stuff::all(),
+        ]);
     }
 }

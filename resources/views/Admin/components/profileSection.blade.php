@@ -16,6 +16,10 @@
                     <a href="{{ route('admin.bookings') }}"
                         class="btn btn-primary text-white py-2 px-3 mt-3 rounded-0">Бронирования</a>
                 </div>
+                <div>
+                    <a href="{{ route('admin.stuff.index') }}"
+                        class="btn btn-primary text-white py-2 px-3 mt-3 rounded-0">Сотрудники</a>
+                </div>
             </div>
         </div>
     </div>

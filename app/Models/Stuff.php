@@ -9,5 +9,12 @@ class Stuff extends Model
 {
     use HasFactory;
 
-    protected $table = 'struff';
+    protected $table = 'stuff';
+
+    protected $fillable = [
+        'full_name',
+        'position',
+        'description',
+        'avatar_path',
+    ];
 }

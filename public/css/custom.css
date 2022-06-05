@@ -197,6 +197,17 @@
     height: max(100vh, 100vw);
 }
 
+.stuff-image-00000 {
+    object-fit: cover;
+    max-width: 260px;
+    max-height: 260px;
+}
+
+.stuff-preview-bg {
+    height: 400px;
+    background-color: #d4d7dd;
+}
+
 /* Overrides */
 .btn,
 .form-control {
