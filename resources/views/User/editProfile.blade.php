@@ -4,17 +4,17 @@
     <section class="site-section">
         <div class="container">
             <div class="row">
-                <h2 class="heading-39291 col-12">Редачить профиль</h2>
+                <h2 class="heading-39291 col-12">Изменить профиль</h2>
 
                 <div class="col-12 bg-white p-6">
-                    <form class="register-form col-12 mx-auto" action="{{ route('updateProfile') }}" method="post">
+                    <form class="edit-profile-form col-12 mx-auto" action="{{ route('updateProfile') }}" method="post">
                         @csrf
                         <div class="form-group row">
                             <div class="col-md-12">
                                 <input type="text" name="full_name"
                                     class="form-control border @error('full_name') is-invalid @enderror"
                                     placeholder="Ваше имя"
-                                    value="{{ old('full_name') ? old('full_name') : $user->full_name }}">
+                                    value="{{ old('full_name') ?? $user->full_name }}">
                                 <div class="invalid-feedback text-bold">
                                     @error('full_name')
                                         {{ $message }}
@@ -26,7 +26,7 @@
                             <div class="col-md-12">
                                 <input type="text" name="login"
                                     class="form-control border @error('login') is-invalid @enderror" placeholder="Логин"
-                                    value="{{ old('login') ? old('login') : $user->login }}">
+                                    value="{{ old('login') ?? $user->login }}">
                                 <div class="invalid-feedback text-bold">
                                     @error('login')
                                         {{ $message }}
@@ -39,9 +39,22 @@
                                 <input type="email" name="email"
                                     class="form-control border @error('email') is-invalid @enderror"
                                     placeholder="Адрес электронной почты"
-                                    value="{{ old('email') ? old('email') : $user->email }}">
+                                    value="{{ old('email') ?? $user->email }}">
                                 <div class="invalid-feedback text-bold">
                                     @error('email')
+                                        {{ $message }}
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-12">
+                                <input type="text" name="phone"
+                                    class="form-control border @error('phone') is-invalid @enderror"
+                                    placeholder="Номер телефона"
+                                    value="{{ old('phone') ?? $user->phone }}">
+                                <div class="invalid-feedback text-bold">
+                                    @error('phone')
                                         {{ $message }}
                                     @enderror
                                 </div>

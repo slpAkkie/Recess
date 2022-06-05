@@ -40,6 +40,17 @@
                         </div>
                     </div>
                     <div class="form-group row">
+                        <div class="col-md-12">
+                            <input type="text" name="phone" class="form-control @error('phone') is-invalid @enderror"
+                                placeholder="Номер телефона" value="{{ old('phone') }}">
+                            <div class="invalid-feedback text-bold">
+                                @error('phone')
+                                    {{ $message }}
+                                @enderror
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
                         <div class="col-12 col-md-6 mb-4 mb-md-0">
                             <input type="password" name="password"
                                 class="form-control @error('password') is-invalid @enderror" placeholder="Пароль">

@@ -38,6 +38,7 @@ class AuthController extends Controller
             'full_name',
             'login',
             'email',
+            'phone',
             'password',
         ]));
 

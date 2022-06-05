@@ -12,6 +12,7 @@ class UpdateUserRequest extends FormRequest
             'full_name.required'    => 'Поле Имя не заполнено',
             'email.required'        => 'Поле Email не заполнено',
             'email.email'           => 'Поле Email должно быть действительным адресом электронной почты',
+            'phone.required'        => 'Поле Номер телефона не заполнено',
             'password.confirmed'    => 'Пароли не совпадают',
         ];
     }
@@ -22,6 +23,7 @@ class UpdateUserRequest extends FormRequest
             'login'     => 'required',
             'full_name' => 'required',
             'email'     => 'required|email',
+            'phone'     => 'required',
             'password'  => 'nullable|confirmed',
         ];
     }

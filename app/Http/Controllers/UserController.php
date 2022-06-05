@@ -19,16 +19,21 @@ class UserController extends Controller
 
     public function updateProfile(UpdateUserRequest $updateUserRequest)
     {
+        $errors = [];
+
         /** @var User */
         $user = Auth::user();
 
-        $errors = [];
+        $q = User::where('id', '!=', $user->id);
 
-        if ($updateUserRequest->has('email') && ($user = User::where('email', $updateUserRequest->get('email'))->first()) && $user->id !== Auth::id())
+        if ($updateUserRequest->has('email') && (clone $q)->where('email', $updateUserRequest->get('email'))->count() > 0)
             $errors['email'] = [ 'Этот Адрес электронной почты уже занят' ];
 
-        if ($updateUserRequest->has('login') && ($user = User::where('login', $updateUserRequest->get('login'))->first()) && $user->id !== Auth::id())
+        if ($updateUserRequest->has('login') && (clone $q)->where('login', $updateUserRequest->get('login'))->count() > 0)
             $errors['login'] = [ 'Этот Логин уже занят' ];
+
+        if ($updateUserRequest->has('phone') && (clone $q)->where('phone', $updateUserRequest->get('phone'))->count() > 0)
+            $errors['phone'] = [ 'Этот Логин уже занят' ];
 
         if (count($errors)) return Redirect::back()->withInput()->withErrors($errors);
 
@@ -36,6 +41,7 @@ class UserController extends Controller
             'full_name',
             'login',
             'email',
+            'phone',
             'password',
         ])));
 
