@@ -191,6 +191,6 @@
     border: 1px solid #dee2e6 !important;
 }
 
-input.form-control:not(:placeholder-shown) {
-    font-weight: 600;
+input.form-control:not(:placeholder-shown), select {
+    font-weight: 600 !important;
 }

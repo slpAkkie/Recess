@@ -10,6 +10,14 @@ class Work extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'title',
+        'type_id',
+        'country',
+        'city',
+        'shooted_at',
+    ];
+
     public function getVideo()
     {
         return $this->objects()->where('type_id', 1)->first();

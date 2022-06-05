@@ -58,6 +58,7 @@ Route::middleware('auth')->group(function () {
             Route::get('/', [AdminController::class, 'indexWorks'])->name('.index');
             Route::get('/create', [WorkController::class, 'create'])->name('.create');
             Route::post('/', [WorkController::class, 'store'])->name('.store');
+            Route::get('/{work}', [WorkController::class, 'show'])->name('.show');
             Route::get('/{work}/edit', [WorkController::class, 'edit'])->name('.edit');
             Route::post('/{work}/edit', [WorkController::class, 'update'])->name('.update');
             Route::delete('/{work}/delete', [WorkController::class, 'destroy'])->name('.delete');

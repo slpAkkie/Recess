@@ -64,5 +64,5 @@
         </div>
     </div>
 
-    <x-sections.tips :heading="true" />
+    <x-sections.tips heading />
 @endsection
