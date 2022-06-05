@@ -8,10 +8,10 @@ use Illuminate\Database\Seeder;
 class ShootingTypeSeeder extends Seeder
 {
     private $rows = [
-        [ 'title' => 'Коммерческая' ],
-        [ 'title' => 'Студийная' ],
+        [ 'title' => 'Коммерческая съемка' ],
+        [ 'title' => 'Студийная съемка' ],
         [ 'title' => 'Love Story' ],
-        [ 'title' => 'Прогулочная' ],
+        [ 'title' => 'Прогулочная съемка' ],
     ];
 
     public function run()

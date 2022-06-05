@@ -7,9 +7,7 @@
                 <div class="row align-items-center justify-content-center">
                     <div class="col-lg-12 text-center">
                         <div class="box-92819">
-                            <h1 class="text-uppercase text-black mb-3">Наши услуги</h1>
-                            <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus
-                                harum, error minima?</p>
+                            <h1 class="text-uppercase text-black mb-3">Портфолио</h1>
                         </div>
                     </div>
                 </div>
@@ -36,6 +34,4 @@
             </div>
         </div>
     </div>
-
-    <x-sections.tips />
 @endsection

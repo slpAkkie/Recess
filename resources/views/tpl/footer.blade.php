@@ -3,12 +3,6 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="row">
-                    <div class="col-md-7">
-                        <h2 class="footer-heading mb-4">О нас</h2>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                            there live the blind texts. </p>
-
-                    </div>
                     <div class="col-md-4 ml-auto">
                         <h2 class="footer-heading mb-4">Дополнительно</h2>
                         <ul class="list-unstyled">

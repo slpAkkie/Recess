@@ -21,7 +21,7 @@
                     <div class="row">
                         <div class="col mb-4 mb-md-0">
                             @if($stuff->avatar_path)
-                                <img class="img-fluid" src="{{ asset($stuff->avatar_path) }}" alt="{{ $stuff->full_name }}">
+                                <img class="img-fluid stuff-avatar" src="{{ asset($stuff->avatar_path) }}" alt="{{ $stuff->full_name }}">
                                 @auth()
                                     @if (Auth::user()->is_admin)
                                         <form action="{{ route('admin.stuff.delete-avatar', $stuff) }}" method="post">

@@ -29,7 +29,7 @@ class AuthController extends Controller
 
         Auth::login($user);
 
-        return response()->redirectToRoute('profile');
+        return response()->redirectToRoute('profile.index');
     }
 
     public function register(RegisterRequest $registerRequest)

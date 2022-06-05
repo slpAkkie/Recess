@@ -3,6 +3,16 @@
 @section('body')
     <section class="site-section">
         <div class="container">
+            @auth
+                @if (Auth::user()->is_admin)
+                    <div class="row mb-3">
+                        <div class="col">
+                            <a href="{{ route('admin.services.index') }}" class="btn btn-primary mb-5 py-2 px-3 mt-1 rounded-0">Все услуги</a>
+                        </div>
+                    </div>
+                @endif
+            @endauth
+
             <div class="row">
                 <h2 class="heading-39291 col-12">{{ $service->title }} <span class="text-muted">({{ $service->type->title }})</span></h2>
 
@@ -10,7 +20,7 @@
                     <div class="row">
                         <div class="col mb-4 mb-md-0">
                             <img class="img-fluid" src="{{ asset($service->image_path) }}" alt="{{ $service->title }}">
-                            <a href="{{ route('book', $service) }}" class="btn btn-primary d-block py-2 px-3 mt-1 rounded-0">Забронировать</a>
+                            <a href="{{ route('booking') }}" class="btn btn-primary d-block py-2 px-3 mt-1 rounded-0">Забронировать</a>
                         </div>
                         <div class="col-12 col-md-8 d-flex flex-column align-items-start">
                             <div class="flex-grow-1">

@@ -28,13 +28,13 @@
                 @guest
                     <h3 class="col-12 m-0">Для подсчета суммы бронирования <a href="{{ route('showLogin') }}">войдите</a> в аккаунт (или <a href="{{ route('showRegister') }}">зарегистрируйтесь</a>)</h3>
                 @else
-                    <h5 class="col-12 heading-39291 mb-1">Калькулятор бронирования</h5>
+                    <h5 class="col-12 heading-39291 mb-1">Расчет стоимости съёмки</h5>
                     <h6 class="col-12 mb-5 text-muted">Для бронирования, заполните все поля</h6>
                     <form class="col-12" action="{{ route('booking') }}" method="post" id="calculator-form">
                         @csrf
                         <div class="form-group row">
                             <div class="col-12 col-md-6 mb-3 mb-md-0">
-                                <label for="service_id">Услуга</label>
+                                <label for="service_id">Выберите услугу</label>
                                 <select name="service_id" id="service_id" class="form-control border @error('service_id') is-invalid @enderror">
                                     @foreach ($services as $s)
                                         <option value="{{ $s->id }}">{{ $s->title }}</option>
@@ -44,7 +44,7 @@
                             <div class="col-12 col-md-6">
                                 <label for="date">Выберите дату</label>
                                 <input type="date" name="date" id="date"
-                                    class="form-control border @error('date') is-invalid @enderror" placeholder="Пароль">
+                                    class="form-control border @error('date') is-invalid @enderror" placeholder="Выберите дату">
                                 <div class="invalid-feedback text-bold" id="date-invalid-feedback">
                                     @error('date')
                                         {{ $message }}
@@ -140,8 +140,7 @@
                                 <span>Россия, Нижний Новгород</span>
                             </li>
                             <li class="d-block mb-3"><span
-                                    class="d-block text-black small text-uppercase text-semi-bold">Телефон:</span><span>+7
-                                    831 000 00 00</span></li>
+                                    class="d-block text-black small text-uppercase text-semi-bold">Телефон:</span><span>+7 952 451 67 63</span></li>
                             <li class="d-block mb-3"><span
                                     class="d-block text-black small text-uppercase font-weight-bold">Email:</span><span>recess@akkie.cyou</span>
                             </li>
@@ -205,7 +204,7 @@
         }
 
         function updateCalc() {
-            weekendInfo.text(isWeekend ? 'В пятницу и субботу, стоимость услуг на 10% дороже' : '');
+            weekendInfo.text(isWeekend ? 'Стоимость съемки в пятницу и субботу может быть выше!' : '');
             if (isFormInputErrors()) {
                 if (isNaN(date)) setDateError('Введите корректную дату');
                 else if (date <= new Date()) setDateError('На эту дату нельзя заказать бронирование');

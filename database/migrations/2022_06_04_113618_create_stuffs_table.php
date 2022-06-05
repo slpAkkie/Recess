@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('full_name');
             $table->string('position');
-            $table->string('description');
+            $table->string('description')->nullable();
             $table->string('avatar_path')->nullable();
             $table->timestamps();
         });

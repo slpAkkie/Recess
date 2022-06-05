@@ -7,7 +7,7 @@
                 <h2 class="heading-39291 col-12">Изменить сотрудника</h2>
 
                 <div class="col-12 bg-white p-6">
-                    <form class="create-stuff-form col-12 mx-auto" action="{{ route('admin.stuff.update', $stuff }}" method="post" enctype="multipart/form-data">
+                    <form class="create-stuff-form col-12 mx-auto" action="{{ route('admin.stuff.update', $stuff) }}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group row">
                             <div class="col-md-12">

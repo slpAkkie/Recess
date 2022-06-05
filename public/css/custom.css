@@ -232,6 +232,10 @@
     opacity: .5;
 }
 
+.stuff-avatar {
+    width: 100%;
+}
+
 /* Overrides */
 .btn,
 .form-control {
@@ -244,4 +248,8 @@
 
 input.form-control:not(:placeholder-shown), select {
     font-weight: 600 !important;
+}
+
+.service-29193 {
+    height: 100%;
 }

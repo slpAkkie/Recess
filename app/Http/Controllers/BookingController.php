@@ -35,7 +35,7 @@ class BookingController extends Controller
             'status_id' => 1,
         ]))->save();
 
-        return response()->redirectToRoute('profile');
+        return response()->redirectToRoute('profile.index');
     }
 
     public function cancel(Booking $booking)

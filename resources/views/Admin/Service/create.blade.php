@@ -4,6 +4,8 @@
     <div class="site-section">
         <div class="container">
             <div class="row justify-content-center">
+                <h2 class="heading-39291 col-12 text-center">Новая услуга</h2>
+
                 <form class="login-form col-12" action="{{ route('admin.services.store') }}" method="post">
                     @csrf
                     <div class="form-group row">

@@ -87,6 +87,11 @@ class StuffController extends Controller
             'avatar_path',
         ])));
 
+        if ($stuffRequest->get('description') === null) {
+            $stuff->description = null;
+            $stuff->save();
+        }
+
         return response()->redirectToRoute('stuff.show', [
             'stuff' => $stuff,
         ]);

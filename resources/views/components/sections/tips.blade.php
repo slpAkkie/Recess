@@ -9,20 +9,20 @@
                 <div class="slide-one-item owl-carousel">
                     <blockquote class="testimonial-1">
                         <span class="quote quote-icon-wrap"><span class="icon-format_quote"></span></span>
-                        <h1 class="text-semi-bold">Не смотрите в камеру</h1>
-                        <cite><span class="text-muted">Не смотрите в объектив фотографа</span></cite>
+                        <h1 class="text-semi-bold">Не стесняйтесь</h1>
+                        <cite><span class="text-muted">Ведите себя как в реальной жизни</span></cite>
                     </blockquote>
 
                     <blockquote class="testimonial-1">
                         <span class="quote quote-icon-wrap"><span class="icon-format_quote"></span></span>
-                        <h1 class="text-semi-bold">Ведите себя так, как ведете в реальной жизни</h1>
-                        <cite><span class="text-muted">Это может создать ощущение наигранности</span></cite>
+                        <h1 class="text-semi-bold">Правильные позы</h1>
+                        <cite><span class="text-muted">Следите за своим положением в пространстве</span></cite>
                     </blockquote>
 
                     <blockquote class="testimonial-1">
                         <span class="quote quote-icon-wrap"><span class="icon-format_quote"></span></span>
-                        <h1 class="text-semi-bold">Правильно выбирайте позы</h1>
-                        <cite><span class="text-muted">Следите за своим положением тела в пространстве</span></cite>
+                        <h1 class="text-semi-bold">Не смотрите в объектив фотографа</h1>
+                        <cite><span class="text-muted">Поймате взгляд на чем-то красивом</span></cite>
                     </blockquote>
                 </div>
             </div>

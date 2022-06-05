@@ -4,7 +4,7 @@
     <section class="site-section">
         <div class="container">
             <div class="row">
-                <h2 class="heading-39291 col-12">Все бронирования (не выполненные)</h2>
+                <h2 class="heading-39291 col-12">Все бронирования</h2>
 
                 <div class="col-12 bg-white p-6">
                     @if($bookings->count())

@@ -15,7 +15,8 @@
             </div>
 
             <div class="ftco-cover-1 video-header-item-00000 bnr-video-wrapper">
-                <video class="bnr-video" src="{{ asset('videos/about-1.mp4') }}" preload="auto" no-controls autoplay loop playsinline muted></video>
+                <video class="bnr-video" src="{{ asset('videos/about-1.mp4') }}" preload="auto" no-controls autoplay
+                    loop playsinline muted></video>
             </div>
         </div>
     </div>
@@ -29,17 +30,20 @@
             <div class="row">
                 <div class="col-md-5">
                     <h2 class="heading-39291">История нашей команды</h2>
-                    <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, consequuntur,
-                        harum? Culpa, iure vel fugiat veritatis obcaecati architecto.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aut at quisquam, perferendis dolores
-                        fuga nulla ratione eveniet ipsam, blanditiis repellendus porro. Voluptatem tempore ratione ut ipsa
-                        et deleniti!</p>
-                    <p>Veniam officiis ad doloribus nostrum, id, excepturi. Quam aliquam, explicabo non dolorem eveniet
-                        similique! Veritatis necessitatibus ipsa eligendi distinctio suscipit magnam quos itaque, numquam
-                        sequi. Ipsa eveniet consectetur deleniti.</p>
-                    <p>Enim laudantium, perferendis distinctio! Natus ex, ad quisquam nemo inventore, saepe eveniet
-                        temporibus debitis magni ea. Corporis illo necessitatibus, error laboriosam voluptatum nostrum id at
-                        adipisci repellendus, quod explicabo?</p>
+                    <p class="mb-5">Развиваясь, я стал искать союзников. Со временем стало сложнее со всем
+                        справляться одному, ведь объем
+                        работ увеличивался.</p>
+                    <p>В одном из заведений, в котором я работал, мне попался Александр. Он занимался фотографией и также
+                        горел
+                        делом.</p>
+                    <p>Мы сработались, но дел меньше не стало. Нужно было найти монтажера.</p>
+                    <p>Я обучался в Нижегородском колледже и в потоке со мной учился Иван. Он часто ходил на мероприятия и
+                        был
+                        помощником ведущего, а также монтировал видео для колледжа. Я предложил ему смонтировать один из
+                        проектов, и увидел в нем потенциал</p>
+                    <p>
+                        Вот так мы и собрались, и в настоящее время помогаем каждому запечатлеть что-то важное.
+                    </p>
                 </div>
 
                 <div class="col-md-6 ml-auto">
@@ -55,8 +59,7 @@
             <div class="row justify-content-center text-center mb-5 section-2-title">
                 <div class="col-md-6">
                     <h2 class="heading-39291">Наша команда</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis provident eius ratione velit,
-                        voluptas laborum nemo quas ad necessitatibus placeat?</p>
+                    <p>Специалисты, работающие над вашими проекта</p>
                 </div>
             </div>
             <div class="row align-items-stretch">

@@ -53,7 +53,7 @@
                 </div>
                 <div class="form-group row">
                     <div class="col-md-12">
-                        <label for="shooted_at">Вид съемки</label>
+                        <label for="shooted_at">Дата съемки</label>
                         <input type="date" name="shooted_at" id="shooted_at"
                             class="form-control @error('shooted_at') is-invalid @enderror" placeholder="Дата съемки"
                             value="{{ old('shooted_at') }}">
