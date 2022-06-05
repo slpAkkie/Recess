@@ -13,6 +13,7 @@ class UpdateUserRequest extends FormRequest
             'email.required'        => 'Поле Email не заполнено',
             'email.email'           => 'Поле Email должно быть действительным адресом электронной почты',
             'phone.required'        => 'Поле Номер телефона не заполнено',
+            'phone.regex'           => 'Номер телефона должен должен состоять из 11 цифр и начинаться с 7 или 8',
             'password.confirmed'    => 'Пароли не совпадают',
         ];
     }
@@ -23,7 +24,7 @@ class UpdateUserRequest extends FormRequest
             'login'     => 'required',
             'full_name' => 'required',
             'email'     => 'required|email',
-            'phone'     => 'required',
+            'phone'     => 'required|unique:users,phone|regex:/^[78][0-9]{10}$/',
             'password'  => 'nullable|confirmed',
         ];
     }

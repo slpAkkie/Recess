@@ -16,6 +16,7 @@ class RegisterRequest extends FormRequest
             'email.unique'          => 'Этот email уже занят',
             'phone.required'        => 'Поле Номер телефона не заполнено',
             'phone.unique'          => 'Этот номер телефона уже занят',
+            'phone.regex'           => 'Номер телефона должен должен состоять из 11 цифр и начинаться с 7 или 8',
             'password.required'     => 'Поле Пароль не заполнено',
             'password.confirmed'    => 'Пароли не совпадают',
         ];
@@ -27,7 +28,7 @@ class RegisterRequest extends FormRequest
             'login'     => 'required|unique:users,login',
             'full_name' => 'required',
             'email'     => 'required|email|unique:users,email',
-            'phone'     => 'required|unique:users,phone',
+            'phone'     => 'required|unique:users,phone|regex:/^[78][0-9]{10}$/',
             'password'  => 'required|confirmed',
         ];
     }
