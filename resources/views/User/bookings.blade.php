@@ -7,13 +7,13 @@
                 <h2 class="heading-39291 col-12">Ваши бронирования</h2>
 
                 <div class="col-12 bg-white p-6">
-                    @isset($bookings)
+                    @if($bookings->count())
                         @foreach ($bookings as $b)
                             <x-User.booking :booking="$b" />
                         @endforeach
                     @else
                         <h6 class="m-0">У вас еще нет бронирований</h6>
-                    @endisset
+                    @endif
                 </div>
             </div>
         </div>
