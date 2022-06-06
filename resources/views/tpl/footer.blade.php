@@ -7,8 +7,6 @@
                         <h2 class="footer-heading mb-4">Дополнительно</h2>
                         <ul class="list-unstyled">
                             <li><a href="{{ route('about') }}">О нас</a></li>
-                            <li><a href="#">Правила пользования</a></li>
-                            <li><a href="#">Политика конфиденциальности</a></li>
                             <li><a href="{{ route('contacts') }}">Свяжитесь с нами</a></li>
                         </ul>
                     </div>
