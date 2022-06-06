@@ -18,11 +18,11 @@ class BookingController extends Controller
         return $carbonDate === 5 || $carbonDate === 6;
     }
 
-    private function calculatePrice(int $service_id, string $date)
+    private function calculatePrice(int $service_id, string $date, int $duration)
     {
         $servicePrice = Service::find($service_id)->price_per_hour;
         $ratio = $this->isWeekend($date) ? 1.1 : 1;
-        return round($servicePrice * $ratio, 0);
+        return round($servicePrice * $ratio * $duration, 0);
     }
 
     public function store(BookingRequest $bookingRequest)
@@ -30,7 +30,8 @@ class BookingController extends Controller
         (new Booking([
             'service_id' => $bookingRequest->get('service_id'),
             'date' => $bookingRequest->get('date'),
-            'total' => $this->calculatePrice($bookingRequest->get('service_id'), $bookingRequest->get('date')),
+            'duration' => $bookingRequest->get('duration'),
+            'total' => $this->calculatePrice($bookingRequest->get('service_id'), $bookingRequest->get('date'), $bookingRequest->get('duration')),
             'user_id' => Auth::id(),
             'status_id' => 1,
         ]))->save();
@@ -56,7 +57,8 @@ class BookingController extends Controller
     {
         $booking->update([
             'date' => $updateBookingRequest->get('date'),
-            'total' => $this->calculatePrice($booking->service_id, $updateBookingRequest->get('date')),
+            'duration' => $updateBookingRequest->get('duration'),
+            'total' => $this->calculatePrice($booking->service_id, $updateBookingRequest->get('date'), $updateBookingRequest->get('duration')),
         ]);
 
         return response()->redirectToRoute('admin.bookings.edit', [

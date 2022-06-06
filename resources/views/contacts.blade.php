@@ -33,7 +33,7 @@
                     <form class="col-12" action="{{ route('booking') }}" method="post" id="calculator-form">
                         @csrf
                         <div class="form-group row">
-                            <div class="col-12 col-md-6 mb-3 mb-md-0">
+                            <div class="col-12 col-md-4 mb-3 mb-md-0">
                                 <label for="service_id">Выберите услугу</label>
                                 <select name="service_id" id="service_id" class="form-control border @error('service_id') is-invalid @enderror">
                                     @foreach ($services as $s)
@@ -41,12 +41,22 @@
                                     @endforeach
                                 </select>
                             </div>
-                            <div class="col-12 col-md-6">
+                            <div class="col-12 col-md-4 mb-3 mb-md-0">
                                 <label for="date">Выберите дату</label>
                                 <input type="date" name="date" id="date"
                                     class="form-control border @error('date') is-invalid @enderror" placeholder="Выберите дату">
                                 <div class="invalid-feedback text-bold" id="date-invalid-feedback">
                                     @error('date')
+                                        {{ $message }}
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <label for="duration">Длительность съемки</label>
+                                <input type="number" min="1" name="duration" id="duration"
+                                    class="form-control border @error('duration') is-invalid @enderror" placeholder="Количество часов">
+                                <div class="invalid-feedback text-bold" id="duration-invalid-feedback">
+                                    @error('duration')
                                         {{ $message }}
                                     @enderror
                                 </div>
@@ -180,18 +190,25 @@
 
         const serviceInput = $('#service_id');
         const dateInput = $('#date');
+        const durationInput = $('#duration');
         const totalInput = $('#total');
         const totalWrapper = $('#total-wrapper');
         const bookBtn = $('#book-btn');
         const weekendInfo = $('#weekend-info');
         const totalLabel = $('#total-label');
         const dateInvalidFeedback = $('#date-invalid-feedback');
+        const durationInvalidFeedback = $('#duration-invalid-feedback');
 
-        let date = null, service_id = serviceInput.val(), total = 0, isWeekend = false;
+        let date = null, service_id = serviceInput.val(), total = 0, isWeekend = false, duration = null;
 
         function setDateError(message) {
             dateInvalidFeedback.text(message);
             dateInput.addClass('is-invalid')
+        }
+
+        function setDurationError(message) {
+            durationInvalidFeedback.text(message);
+            durationInput.addClass('is-invalid')
         }
 
         function clearDateError() {
@@ -199,25 +216,47 @@
             dateInput.removeClass('is-invalid')
         }
 
+        function clearDurationError() {
+            durationInvalidFeedback.text('');
+            durationInput.removeClass('is-invalid')
+        }
+
+        function clearInputErrors() {
+            clearDateError();
+            clearDurationError();
+        }
+
+        function isDateWrong() {
+            return !date || isNaN(date) || !service_id || date <= new Date()
+        }
+
+        function isDurationWrong() {
+            return !duration || isNaN(duration) || duration < 1;
+        }
+
         function isFormInputErrors() {
-            return !date || isNaN(date) || !service_id || date <= new Date();
+            return isDateWrong() || isDurationWrong();
         }
 
         function updateCalc() {
+            clearInputErrors();
+
             weekendInfo.text(isWeekend ? 'Стоимость съемки в пятницу и субботу может быть выше!' : '');
             if (isFormInputErrors()) {
-                if (isNaN(date)) setDateError('Введите корректную дату');
-                else if (date <= new Date()) setDateError('На эту дату нельзя заказать бронирование');
+                if (date <= new Date()) setDateError('На эту дату нельзя заказать бронирование');
+                else if (isDateWrong()) setDateError('Введите корректную дату');
                 else clearDateError();
+
+                if (isDurationWrong()) setDurationError('Введите корректную длительность в часах');
+                else clearDurationError();
 
                 totalWrapper.addClass('d-none');
                 bookBtn.addClass('d-none');
                 total = 0
             } else {
-                clearDateError();
                 totalWrapper.removeClass('d-none');
                 bookBtn.removeClass('d-none');
-                total = Math.floor(services[service_id].price_per_hour * (isWeekend ? 1.1 : 1));
+                total = Math.floor(services[service_id].price_per_hour * (isWeekend ? 1.1 : 1)) * duration;
                 totalLabel.text(`Всего: ${total} рублей`)
             }
 
@@ -232,6 +271,11 @@
         dateInput.on('change', function () {
             date = new Date(dateInput.val());
             isWeekend = date ? [5, 6].includes(date.getDay()) : false;
+            updateCalc();
+        })
+
+        durationInput.on('input', function () {
+            duration = durationInput.val();
             updateCalc();
         })
     </script>

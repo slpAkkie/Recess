@@ -21,6 +21,7 @@ return new class extends Migration
             $table->foreignIdFor(Service::class)->references('id')->on('services')->cascadeOnUpdate()->cascadeOnDelete();
             $table->foreignIdFor(User::class)->references('id')->on('users')->cascadeOnUpdate()->cascadeOnDelete();;
             $table->date('date');
+            $table->integer('duration');
             $table->integer('total');
             $table->foreignIdFor(BookingStatus::class, 'status_id')->references('id')->on('booking_statuses')->cascadeOnUpdate()->cascadeOnDelete();;
             $table->timestamps();

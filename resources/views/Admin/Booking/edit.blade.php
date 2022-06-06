@@ -41,14 +41,22 @@
 
                     <form class="mt-5" action="{{ route('admin.bookings.update', $booking) }}" method="post" id="edit-booking-form">
                         @csrf
-                        <h5>Изменить дату бронирования</h5>
+                        <h5 class="mb-3">Изменить бронирование</h5>
                         <div class="form-group row">
                             <div class="col-12 col-md-6">
-                                <label for="date">Выберите дату</label>
+                                <label for="date">Дата съемки</label>
                                 <input type="date" name="date" id="date"
-                                    class="form-control border @error('date') is-invalid @enderror" placeholder="Пароль" value="{{ $booking->date }}">
+                                    class="form-control border @error('date') is-invalid @enderror" placeholder="Дата съемки" value="{{ $booking->date }}">
                                 <div class="invalid-feedback text-bold" id="date-invalid-feedback">
                                     @error('date')
+                                        {{ $message }}
+                                    @enderror
+                                </div>
+                                <label class="mt-3" for="duration">Длительность съемки</label>
+                                <input type="number" min="1" name="duration" id="duration"
+                                    class="form-control border @error('duration') is-invalid @enderror" placeholder="Количество часов" value="{{ $booking->duration }}">
+                                <div class="invalid-feedback text-bold" id="duration-invalid-feedback">
+                                    @error('duration')
                                         {{ $message }}
                                     @enderror
                                 </div>

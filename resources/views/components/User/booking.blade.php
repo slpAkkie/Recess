@@ -5,6 +5,7 @@
             <div><span class="text-semi-bold">Цена:</span> {{ $booking->total }}</div>
             <div><span class="text-semi-bold">Дата:</span> {{ Illuminate\Support\Carbon::parse($booking->date)->format('d.m.Y') }}</div>
             <div><span class="text-semi-bold">Статус:</span> {{ $booking->status->title }}</div>
+            <div><span class="text-semi-bold">Длительность:</span> {{ $booking->duration }} часов</div>
 
             @isset($admin)
                 <div><span class="text-semi-bold">Пользователь:</span> {{ $booking->user->full_name }}</div>
