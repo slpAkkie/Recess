@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\BookingRequest;
+use App\Http\Requests\StoreBookingRequest;
 use App\Http\Requests\UpdateBookingRequest;
 use App\Models\Booking;
 use App\Models\Service;
@@ -25,13 +25,13 @@ class BookingController extends Controller
         return round($servicePrice * $ratio * $duration, 0);
     }
 
-    public function store(BookingRequest $bookingRequest)
+    public function store(StoreBookingRequest $storeBookingRequest)
     {
         (new Booking([
-            'service_id' => $bookingRequest->get('service_id'),
-            'date' => $bookingRequest->get('date'),
-            'duration' => $bookingRequest->get('duration'),
-            'total' => $this->calculatePrice($bookingRequest->get('service_id'), $bookingRequest->get('date'), $bookingRequest->get('duration')),
+            'service_id' => $storeBookingRequest->get('service_id'),
+            'date' => $storeBookingRequest->get('date'),
+            'duration' => $storeBookingRequest->get('duration'),
+            'total' => $this->calculatePrice($storeBookingRequest->get('service_id'), $storeBookingRequest->get('date'), $storeBookingRequest->get('duration')),
             'user_id' => Auth::id(),
             'status_id' => 1,
         ]))->save();
