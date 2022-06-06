@@ -13,6 +13,7 @@ class UserSeeder extends Seeder
             'full_name' => 'Гаврилова Алена',
             'login' => 'root',
             'email' => 'root@akkie.cyou',
+            'phone' => '80000000000',
             'password' => 'root',
         ]))->save();
 
@@ -22,6 +23,7 @@ class UserSeeder extends Seeder
             'full_name' => 'Калошин Максим',
             'login' => 'admin',
             'email' => 'admin@akkie.cyou',
+            'phone' => '71234567890',
             'password' => 'admin',
         ]);
         $user->is_admin = 1;
