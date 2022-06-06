@@ -7,19 +7,19 @@
             <div class="owl-carousel slide-one-item-alt-text">
 
                 <div>
-                    <h1 class="text-uppercase mb-3 text-break">Хотите сохранить в памяти определенный отрезок жизни?</h1>
+                    <h1 class="text-uppercase mb-3 text-break text-extra-thin">Хотите сохранить в памяти определенный отрезок жизни?</h1>
                     <p class="mb-5">Наша команда сможет Вам помочь. Просто забронируйте съемку по кнопке ниже.</p>
                     <p class="mb-0"><a href="{{ route('bookingCalculator') }}" class="btn btn-primary rounded-0">Перейти к бронированию</a></p>
                 </div>
 
                 <div>
-                    <h1 class="text-uppercase mb-3 text-break">Снимите с нами самый важный момент!</h1>
+                    <h1 class="text-uppercase mb-3 text-break text-extra-thin">Снимите с нами самый важный момент!</h1>
                     <p class="mb-5">Запечатлим любое ваше важное событие!</p>
                     <p class="mb-0"><a href="{{ route('bookingCalculator') }}" class="btn btn-primary rounded-0">Перейти к бронированию</a></p>
                 </div>
 
                 <div>
-                    <h1 class="text-uppercase mb-3 text-break">Дайте волю эмоциям!</h1>
+                    <h1 class="text-uppercase mb-3 text-break text-extra-thin">Дайте волю эмоциям!</h1>
                     <p class="mb-5">Поделитесь настроением со смотрящим.</p>
                     <p class="mb-0"><a href="{{ route('bookingCalculator') }}" class="btn btn-primary rounded-0">Перейти к бронированию</a></p>
                 </div>
