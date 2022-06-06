@@ -31,14 +31,14 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <div class="col-md-6 mr-auto">
+                        <div class="col-md-12 mr-auto">
                             <input type="submit" class="btn btn-block btn-primary text-white py-3 px-5 rounded-0"
                                 value="Войти">
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-md-12 mr-auto">
-                            <p>Если у вас еще нет аккаунта, можете зарегистрироваться <a
+                            <p class="text-center">Если у вас еще нет аккаунта, можете зарегистрироваться <a
                                     href="{{ route('showRegister') }}">здесь</a>.</p>
                         </div>
                     </div>

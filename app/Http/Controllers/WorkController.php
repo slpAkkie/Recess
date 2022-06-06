@@ -19,7 +19,7 @@ class WorkController extends Controller
     public function create()
     {
         return view('Admin.Work.create', [
-            'types' => ShootingType::all(),
+            'types' => ShootingType::orderBy('created_at', 'DESC')->get(),
         ]);
     }
 
@@ -43,7 +43,7 @@ class WorkController extends Controller
     public function edit(Work $work)
     {
         return view('Admin.Work.edit', [
-            'types' => ShootingType::all(),
+            'types' => ShootingType::orderBy('created_at', 'DESC')->get(),
             'work' => $work,
         ]);
     }

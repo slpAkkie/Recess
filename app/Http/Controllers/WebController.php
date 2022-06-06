@@ -12,28 +12,28 @@ class WebController extends Controller
     public function welcome()
     {
         return view('welcome', [
-            'services' => Service::all(),
+            'services' => Service::orderBy('created_at', 'DESC')->get(),
         ]);
     }
 
     public function portfolio()
     {
         return view('portdolio', [
-            'works' => Work::all(),
+            'works' => Work::orderBy('created_at', 'DESC')->get(),
         ]);
     }
 
     public function about()
     {
         return view('about', [
-            'stuff' => Stuff::all(),
+            'stuff' => Stuff::orderBy('created_at', 'DESC')->get(),
         ]);
     }
 
     public function contacts()
     {
         return view('contacts', [
-            'services' => Service::all(),
+            'services' => Service::orderBy('created_at', 'ASC')->get(),
         ]);
     }
 

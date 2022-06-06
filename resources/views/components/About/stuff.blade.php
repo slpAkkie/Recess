@@ -8,8 +8,8 @@
             @endif
         </a>
         <div class="post-entry-1-contents">
-            <span class="meta">{{ $stuff->position }}</span>
-            <h2>{{ $stuff->full_name }}</h2>
+            <span class="meta stuff-position">{{ $stuff->position }}</span>
+            <h2 class="stuff-full-name">{{ $stuff->full_name }}</h2>
             <p>{{ $stuff->description }}</p>
         </div>
     </div>

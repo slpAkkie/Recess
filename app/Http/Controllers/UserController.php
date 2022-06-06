@@ -52,8 +52,11 @@ class UserController extends Controller
 
     public function bookings()
     {
+        /** @var User */
+        $user = Auth::user();
+
         return view('User.bookings', [
-            'bookings' => Auth::user()->bookings,
+            'bookings' => $user->bookings()->orderBy('created_at', 'DESC')->get(),
         ]);
     }
 }

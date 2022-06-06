@@ -31,13 +31,13 @@
 
         <div class="owl-carousel owl-1">
             <div class="ftco-cover-1 bnr-video-wrapper">
-                <video class="bnr-video" src="{{ asset('videos/carousel-1.mp4') }}" preload="auto" no-controls autoplay loop playsinline muted></video>
+                <video class="bnr-video" src="{{ asset('videos/carousel-1.mp4') }}" no-controls autoplay loop playsinline muted></video>
             </div>
             <div class="ftco-cover-1 bnr-video-wrapper">
-                <video class="bnr-video" src="{{ asset('videos/carousel-2.mp4') }}" preload="auto" no-controls autoplay loop playsinline muted></video>
+                <video class="bnr-video" src="{{ asset('videos/carousel-2.mp4') }}" no-controls autoplay loop playsinline muted></video>
             </div>
             <div class="ftco-cover-1 bnr-video-wrapper">
-                <video class="bnr-video" src="{{ asset('videos/carousel-3.mp4') }}" preload="auto" no-controls autoplay loop playsinline muted></video>
+                <video class="bnr-video" src="{{ asset('videos/carousel-3.mp4') }}" no-controls autoplay loop playsinline muted></video>
             </div>
         </div>
     </div>

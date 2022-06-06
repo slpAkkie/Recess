@@ -7,14 +7,14 @@
                 <div class="row align-items-center justify-content-center">
                     <div class="col-lg-12 text-center">
                         <div class="box-92819">
-                            <h1 class="text-uppercase text-black mb-3">Портфолио</h1>
+                            <h1 class="text-uppercase text-black heading-font">Портфолио</h1>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="ftco-cover-1 video-header-item-00000 bnr-video-wrapper">
-                <video class="bnr-video" src="{{ asset('videos/portfolio-1.mp4') }}" preload="auto" no-controls autoplay loop playsinline muted></video>
+                <video class="bnr-video" src="{{ asset('videos/portfolio-1.mp4') }}" no-controls autoplay loop playsinline muted></video>
             </div>
         </div>
     </div>

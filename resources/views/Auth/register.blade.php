@@ -75,7 +75,7 @@
                     </div>
                     <div class="form-group row">
                         <div class="col-md-12 mr-auto">
-                            <p>Если у вас уже есть аккаунт, <a href="{{ route('showLogin') }}">войдите</a> в него.</p>
+                            <p class="text-center">Если у вас уже есть аккаунт, <a href="{{ route('showLogin') }}">войдите</a> в него.</p>
                         </div>
                     </div>
                 </form>

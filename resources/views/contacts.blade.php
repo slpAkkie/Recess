@@ -7,7 +7,7 @@
                 <div class="row align-items-center justify-content-center">
                     <div class="col-lg-12 text-center">
                         <div class="box-92819">
-                            <h1 class="text-uppercase text-black text-extra-thin mb-3">Связаться с нами</h1>
+                            <h1 class="text-uppercase text-black mb-3 heading-font">Связаться с нами</h1>
                             <p class="mb-0">Хотите поблагодарить автора или предложить фото- или видео- съемку? Мы
                                 всегда рады обратной связи от вас</p>
                         </div>
@@ -16,7 +16,7 @@
             </div>
 
             <div class="ftco-cover-1 video-header-item-00000 bnr-video-wrapper">
-                <video class="bnr-video" src="{{ asset('videos/contacts-1.mp4') }}" preload="auto" no-controls autoplay loop playsinline muted></video>
+                <video class="bnr-video" src="{{ asset('videos/contacts-1.mp4') }}" no-controls autoplay loop playsinline muted></video>
             </div>
         </div>
     </div>
@@ -136,11 +136,11 @@
                         <h3 class="heading-39291">Контактная информация</h3>
                         <ul class="list-unstyled footer-link">
                             <li class="d-block mb-3">
-                                <span class="d-block text-black small text-uppercase text-semi-bold">Адрес:</span>
+                                <span class="d-block text-black small text-uppercase text-bold">Адрес:</span>
                                 <span>Россия, Нижний Новгород</span>
                             </li>
                             <li class="d-block mb-3"><span
-                                    class="d-block text-black small text-uppercase text-semi-bold">Телефон:</span><span>+7 952 451 67 63</span></li>
+                                    class="d-block text-black small text-uppercase text-bold">Телефон:</span><span>+7 952 451 67 63</span></li>
                             <li class="d-block mb-3"><span
                                     class="d-block text-black small text-uppercase font-weight-bold">Email:</span><span>recess@akkie.cyou</span>
                             </li>

@@ -18,7 +18,7 @@ class ServiceController extends Controller
     public function create()
     {
         return view('Admin.Service.create', [
-            'types' => ShootingType::all(),
+            'types' => ShootingType::orderBy('created_at', 'DESC')->get(),
         ]);
     }
 
@@ -42,7 +42,7 @@ class ServiceController extends Controller
     {
         return view('Admin.Service.edit', [
             'service' => $service,
-            'types' => ShootingType::all(),
+            'types' => ShootingType::orderBy('created_at', 'DESC')->get(),
         ]);
     }
 

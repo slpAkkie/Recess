@@ -2,14 +2,14 @@
     <div class="col-12 col-md-8">
         <h4 class="m-0">{{ $booking->service->title }} <span class="h6 text-bold text-muted m-0">({{ $booking->service->type->title }})</span></h4>
         <div>
-            <div>Цена: {{ $booking->total }}</div>
-            <div>Дата: {{ Illuminate\Support\Carbon::parse($booking->date)->format('d.m.Y') }}</div>
-            <div>Статус: {{ $booking->status->title }}</div>
+            <div><span class="text-semi-bold">Цена:</span> {{ $booking->total }}</div>
+            <div><span class="text-semi-bold">Дата:</span> {{ Illuminate\Support\Carbon::parse($booking->date)->format('d.m.Y') }}</div>
+            <div><span class="text-semi-bold">Статус:</span> {{ $booking->status->title }}</div>
 
             @isset($admin)
-                <div>Пользователь: {{ $booking->user->full_name }}</div>
-                <div>Электронная почта: {{ $booking->user->email }}</div>
-                <div>Номер телефона: {{ $booking->user->phone }}</div>
+                <div><span class="text-semi-bold">Пользователь:</span> {{ $booking->user->full_name }}</div>
+                <div><span class="text-semi-bold">Электронная почта:</span> {{ $booking->user->email }}</div>
+                <div><span class="text-semi-bold">Номер телефона:</span> {{ $booking->user->phone }}</div>
             @endisset
         </div>
     </div>

@@ -3,7 +3,7 @@
 @section('body')
     <div class="site-section">
         <div class="container">
-            <div class="row mb-5 align-items-center">
+            <div class="row mb-6 align-items-center">
                 <div class="col-md-7">
                     <h2 class="heading-39291 mb-0">Все сотрудники</h2>
                 </div>

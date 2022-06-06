@@ -9,19 +9,19 @@
                 <div class="slide-one-item owl-carousel">
                     <blockquote class="testimonial-1">
                         <span class="quote quote-icon-wrap"><span class="icon-format_quote"></span></span>
-                        <h1 class="text-semi-bold">Не стесняйтесь</h1>
+                        <p>Не стесняйтесь</p>
                         <cite><span class="text-muted">Ведите себя как в реальной жизни</span></cite>
                     </blockquote>
 
                     <blockquote class="testimonial-1">
                         <span class="quote quote-icon-wrap"><span class="icon-format_quote"></span></span>
-                        <h1 class="text-semi-bold">Правильные позы</h1>
+                        <p>Правильные позы</p>
                         <cite><span class="text-muted">Следите за своим положением в пространстве</span></cite>
                     </blockquote>
 
                     <blockquote class="testimonial-1">
                         <span class="quote quote-icon-wrap"><span class="icon-format_quote"></span></span>
-                        <h1 class="text-semi-bold">Не смотрите в объектив фотографа</h1>
+                        <p>Не смотрите в объектив фотографа</p>
                         <cite><span class="text-muted">Поймате взгляд на чем-то красивом</span></cite>
                     </blockquote>
                 </div>
