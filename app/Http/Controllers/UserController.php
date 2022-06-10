@@ -33,7 +33,7 @@ class UserController extends Controller
             $errors['login'] = [ 'Этот Логин уже занят' ];
 
         if ($updateUserRequest->has('phone') && (clone $q)->where('phone', $updateUserRequest->get('phone'))->count() > 0)
-            $errors['phone'] = [ 'Этот Логин уже занят' ];
+            $errors['phone'] = [ 'Этот Номер телефон уже занят' ];
 
         if (count($errors)) return Redirect::back()->withInput()->withErrors($errors);
 

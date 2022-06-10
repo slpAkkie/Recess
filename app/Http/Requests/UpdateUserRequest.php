@@ -13,6 +13,7 @@ class UpdateUserRequest extends FormRequest
             'email.required'        => 'Поле Email не заполнено',
             'email.email'           => 'Поле Email должно быть действительным адресом электронной почты',
             'phone.required'        => 'Поле Номер телефона не заполнено',
+            'phone.unique'          => 'Этот номер телефона уже занят',
             'phone.regex'           => 'Номер телефона должен должен состоять из 11 цифр и начинаться с 7 или 8',
             'password.confirmed'    => 'Пароли не совпадают',
         ];
