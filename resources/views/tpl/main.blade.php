@@ -2,6 +2,6 @@
 
 @yield('body')
 
-@include('tpl.footer')
-
 @yield('scripts')
+
+@include('tpl.footer')
