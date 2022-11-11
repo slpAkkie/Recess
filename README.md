@@ -1,6 +1,4 @@
-# Recess
-
-## Description
+## Recess
 
 Portfolio website for photo and videographer
 
