@@ -20,8 +20,10 @@
                     <form action="{{ route('callback') }}" method="post" class="footer-suscribe-form">
                         @csrf
                         <div class="input-group mb-3">
-                            <input type="email" name="email" class="form-control rounded-0 border-secondary text-white bg-transparent @error('email') is-invalid @enderror"
-                                placeholder="Адрес электронной почты" aria-label="Адрес электронной почты" aria-describedby="button-addon2">
+                            <input type="email" name="email"
+                                class="form-control rounded-0 border-secondary text-white bg-transparent @error('email') is-invalid @enderror"
+                                placeholder="Адрес электронной почты" aria-label="Адрес электронной почты"
+                                aria-describedby="button-addon2">
                             <div class="input-group-append">
                                 <button class="btn btn-primary text-white" type="submit"
                                     id="button-addon2">Отправить</button>
